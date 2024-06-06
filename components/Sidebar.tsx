@@ -22,7 +22,6 @@ const Sidebar = ({ user }: SiderbarProps) => {
           />
           <h1 className="sidebar-logo">Arc</h1>
         </Link>
-
         {sidebarLinks.map((item) => {
           const isActive =
             pathname === item.route || pathname.startsWith(`${item.route}/`);
@@ -43,20 +42,14 @@ const Sidebar = ({ user }: SiderbarProps) => {
                   })}
                 ></Image>
               </div>
-              <p
-                className={cn("sidebar-label", {
-                  "!text-white": isActive,
-                })}
-              >
+              <p className={cn("sidebar-label", { "!text-white": isActive })}>
                 {item.label}
               </p>
             </Link>
           );
         })}
-
         USER
       </nav>
-      
       FOOTER
     </section>
   );
